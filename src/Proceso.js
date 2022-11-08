@@ -21,8 +21,13 @@ function Proceso(cantInstancias){
     this.moverPaquete=function(paquete){
         var ubic=this.instancias.indexOf(paquete);
         this.instancias[ubic]=null;
-        this.instancias[ubic+1]=paquete;
-        paquete.aumentarTiempo(); 
+        if(ubic<4){
+            this.instancias[ubic]=null;
+            this.instancias[ubic+1]=paquete;
+            paquete.aumentarTiempo(); 
+        }else{
+            this.destino.recibePaquete(paquete);
+        }
     }
 
 }
