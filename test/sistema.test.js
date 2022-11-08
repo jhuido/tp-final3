@@ -17,7 +17,7 @@ test("Obtener nombre del Destino",()=>{
 
 test("Local genere paquete",()=>{
     var proceso=new Proceso(4);
-    var paquete=proceso.local.generarPaquete();
+    var paquete=proceso.local.generarPaquete(proceso.destino);
     expect(paquete.destino.nombre).toBe("Destino");
 })
 
