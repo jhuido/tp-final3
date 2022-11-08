@@ -16,7 +16,13 @@ function Proceso(cantInstancias){
     this.ubicarPaquete=function(paquete){
         var ubicacion=this.instancias.indexOf(paquete);
         return ubicacion;
+    }
 
+    this.moverPaquete=function(paquete){
+        var ubic=this.instancias.indexOf(paquete);
+        this.instancias[ubic]=null;
+        this.instancias[ubic+1]=paquete;
+        paquete.aumentarTiempo(); 
     }
 
 }
