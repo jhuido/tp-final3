@@ -12,6 +12,16 @@ function Proceso(cantInstancias){
         this.instancias[0]=paquete;
         return paquete;
     }
+
+    this.ubicarPaquete=function(paquete){
+        for(i=0;i<this.instancias.length;i++){
+            if(this.instancias[i]===paquete){
+                return i;
+            }
+        }
+        return null;
+
+    }
 }
 
 module.exports=Proceso;
