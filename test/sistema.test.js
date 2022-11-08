@@ -1,4 +1,5 @@
-const Proceso=require("../src/Proceso.js")
+const Proceso=require("../src/Proceso.js");
+const Paquete=require("../src/Paquete.js")
 
 test("Crear proceso",()=>{
     var proceso=new Proceso(4);
@@ -25,7 +26,11 @@ test("Local genere paquete",()=>{
 test("Proceso ubique paquete",()=>{
     var proceso=new Proceso(4);
     var paquete=proceso.nuevoPaquete();
+
+    var paquete2=new Paquete(proceso.destino); // este paquete no se encuentra en el proceso
+
     expect(proceso.ubicarPaquete(paquete)).toBe(0);
+    expect(proceso.ubicarPaquete(paquete2)).toBe(null);
 })
 
 
