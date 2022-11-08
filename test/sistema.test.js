@@ -44,4 +44,21 @@ test("Paquete se mueve",()=>{
     expect(paquete.tiempo).toBe(1);
 })
 
+test("Paquete llegue a destino",()=>{
+    var proceso=new Proceso(4);
+    var paquete=proceso.nuevoPaquete();
+    expect(proceso.ubicarPaquete(paquete)).toBe(0);
+    expect(paquete.tiempo).toBe(0);
+
+    proceso.moverPaquete(paquete);
+    proceso.moverPaquete(paquete);
+    proceso.moverPaquete(paquete);
+    expect(proceso.ubicarPaquete(paquete)).toBe(3);
+    expect(paquete.tiempo).toBe(3);
+
+    proceso.moverPaquete(paquete);
+    expect(proceso.ubicarPaquete(paquete)).toBe(-1);
+    expect(paquete.tiempo).toBe(4);
+    expect(proceso.destino.recibio(paquete)).toBe(true);
+})
 
