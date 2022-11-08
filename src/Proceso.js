@@ -15,17 +15,20 @@ function Proceso(cantInstancias){
 
     this.ubicarPaquete=function(paquete){
         var ubicacion=this.instancias.indexOf(paquete);
-        return ubicacion;
+        if(ubicacion<this.cantInstancias){
+            return ubicacion;
+        }else{
+            return -1;
+        }
     }
 
     this.moverPaquete=function(paquete){
         var ubic=this.instancias.indexOf(paquete);
         this.instancias[ubic]=null;
-        if(ubic<4){
-            this.instancias[ubic]=null;
+        if(ubic<this.cantInstancias){
             this.instancias[ubic+1]=paquete;
-            paquete.aumentarTiempo(); 
-        }else{
+            paquete.aumentarTiempo();
+        }else if(ubic==this.cantInstancias){
             this.destino.recibePaquete(paquete);
         }
     }

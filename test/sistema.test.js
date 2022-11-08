@@ -57,6 +57,7 @@ test("Paquete llegue a destino",()=>{
     expect(paquete.tiempo).toBe(3);
 
     proceso.moverPaquete(paquete);
+    proceso.moverPaquete(paquete);
     expect(proceso.ubicarPaquete(paquete)).toBe(-1);
     expect(paquete.tiempo).toBe(4);
     expect(proceso.destino.recibio(paquete)).toBe(true);
