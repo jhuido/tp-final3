@@ -22,5 +22,10 @@ test("Local genere paquete",()=>{
     expect(paquete.tiempo).toBe(0);
 })
 
+test("Proceso ubique paquete",()=>{
+    var proceso=new Proceso(4);
+    var paquete=proceso.nuevoPaquete();
+    expect(proceso.ubicarPaquete(paquete)).toBe(0);
+})
 
 
