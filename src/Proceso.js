@@ -1,5 +1,5 @@
-function Proceso(){
-    this.nombre="Cola de salida";
+function Proceso(nombre){
+    this.nombre=nombre;
 }
 
 module.exports=Proceso;
