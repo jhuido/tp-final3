@@ -33,4 +33,15 @@ test("Proceso ubique paquete",()=>{
     expect(proceso.ubicarPaquete(paquete2)).toBe(null);
 })
 
+test("Paquete se mueve",()=>{
+    var proceso=new Proceso(4);
+    var paquete=proceso.nuevoPaquete();
+    expect(proceso.ubicarPaquete(paquete)).toBe(0);
+    expect(paquete.tiempo).toBe(0);
+
+    proceso.moverPaquete(paquete);
+    expect(proceso.ubicarPaquete(paquete)).toBe(1);
+    expect(paquete.tiempo).toBe(1);
+})
+
 
