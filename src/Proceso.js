@@ -14,14 +14,11 @@ function Proceso(cantInstancias){
     }
 
     this.ubicarPaquete=function(paquete){
-        for(i=0;i<this.instancias.length;i++){
-            if(this.instancias[i]===paquete){
-                return i;
-            }
-        }
-        return null;
+        var ubicacion=this.instancias.indexOf(paquete);
+        return ubicacion;
 
     }
+
 }
 
 module.exports=Proceso;
