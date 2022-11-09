@@ -6,9 +6,12 @@ function Proceso(filas,columnas){
         throw new Error("Cantidad de columnas debe ser >= a filas");
     }
     this.cantInstancias=columnas;
-    this.local=new Local("Local");
+    this.locales=asignarLocales(filas);
     this.destino=new Destino("Destino");
     this.instancias=[];
+
+
+    
 
     this.nuevoPaquete=function(){
         var paquete=this.local.generarPaquete(this.destino);
@@ -40,6 +43,16 @@ function Proceso(filas,columnas){
             this.destino.recibePaquete(paquete);
         }
         this.instancias[ubic]=null;
+    }
+
+    function asignarLocales(num){
+        var locales=[];
+        var letra='A';
+        for(i=0;i<num;i++){
+            locales.push(letra);
+            letra=toString(parseInt(letra)+1);
+        }
+        return locales;
     }
 
 }
