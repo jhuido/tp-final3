@@ -1,5 +1,6 @@
 const Local = require("./Local");
 const Destino = require("./Destino");
+const Instancia = require("./Instancia");
 
 function Proceso(filas,instancias){
     if(filas>instancias.length){
@@ -8,7 +9,7 @@ function Proceso(filas,instancias){
     this.cantInstancias=instancias.length;
     this.locales=asignarLocales(filas);
     this.destinos=asignarDestinos(filas);
-    this.instancias=[];    
+    this.instancias=crearInstancias(instancias);    
 
     this.nuevoPaquete=function(){
         var paquete=this.locales[0].generarPaquete(this.destinos[0]);
@@ -59,6 +60,13 @@ function Proceso(filas,instancias){
         }
         return destinos;
     }
+
+    function crearInstancias(instancias){
+        var columnas=[];
+        instancias.forEach(nombre=>columnas.push(new Instancia(nombre)));
+        return columnas;
+    }
+
 
 }
 
