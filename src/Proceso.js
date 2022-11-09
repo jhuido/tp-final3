@@ -3,6 +3,13 @@ const Destino = require("./Destino");
 const Instancia = require("./Instancia");
 
 function Proceso(filas,instancias){
+
+    var rdo=instancias.filter(element=>element=='Cola de Salida');
+    if(rdo>1){
+        throw new Error("Solo haya una cola de salida");
+    }
+
+
     if(filas>instancias.length){
         throw new Error("Cantidad de columnas debe ser >= a filas");
     }
@@ -29,12 +36,6 @@ function Proceso(filas,instancias){
         //var ubic=this.instancias.indexOf(paquete);
         var ubic=this.ubicarPaquete(paquete)
         paquete.aumentarTiempo();
-        /*
-        if(ubic<this.cantInstancias){
-            this.instancias[ubic+1]=paquete;
-        }else{
-            this.destino.recibePaquete(paquete);
-        }*/
         if(ubic<this.cantInstancias-1){
             this.instancias[ubic+1]=paquete;
         }else{
