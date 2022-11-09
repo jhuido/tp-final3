@@ -67,4 +67,9 @@ test("Local tenga nombre abecedario",()=>{
     expect(proceso.locales[1].nombre).toBe("B");
 })
 
+test("Destino tenga numeracion",()=>{
+    expect(proceso.destinos[0].nombre).toBe(1);
+    expect(proceso.destinos[1].nombre).toBe(2);
+})
+
 
