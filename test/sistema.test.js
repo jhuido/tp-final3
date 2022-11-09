@@ -63,8 +63,8 @@ test("Validar proceso",()=>{
 })
 
 test("Local tenga nombre abecedario",()=>{
-    expect(paquete.locales[0].nombre).toBe("A");
-    expect(paquete.locales[1].nombre).toBe("B");
+    expect(proceso.locales[0].nombre).toBe("A");
+    expect(proceso.locales[1].nombre).toBe("B");
 })
 
 
