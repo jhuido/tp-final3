@@ -1,30 +1,31 @@
 const Proceso=require("../src/Proceso.js");
 const Paquete=require("../src/Paquete.js");
 
+var proceso;
+beforeEach(()=>{
+    proceso=new Proceso(1,4);
+})
+
+
 test("Crear proceso",()=>{
-    var proceso=new Proceso(1,4);
     expect(proceso.cantInstancias).toBe(4);
 })
 
 test("Obtener nombre del Local",()=>{
-    var proceso=new Proceso(1,4);
     expect(proceso.local.nombre).toBe("Local");
 })
 
 test("Obtener nombre del Destino",()=>{
-    var proceso=new Proceso(1,4);
     expect(proceso.destino.nombre).toBe("Destino");
 })
 
 test("Local genere paquete",()=>{
-    var proceso=new Proceso(1,4);
     var paquete=proceso.nuevoPaquete();
     expect(paquete.destino.nombre).toBe("Destino");
     expect(paquete.tiempo).toBe(0);
 })
 
 test("Proceso ubique paquete",()=>{
-    var proceso=new Proceso(1,4);
     var paquete=proceso.nuevoPaquete();
 
     var paquete2=new Paquete(proceso.destino); // este paquete no se encuentra en el proceso
@@ -34,7 +35,6 @@ test("Proceso ubique paquete",()=>{
 })
 
 test("Paquete se mueve",()=>{
-    var proceso=new Proceso(1,4);
     var paquete=proceso.nuevoPaquete();
     expect(proceso.ubicarPaquete(paquete)).toBe(0);
     expect(paquete.tiempo).toBe(0);
@@ -45,30 +45,21 @@ test("Paquete se mueve",()=>{
 })
 
 test("Paquete llegue a destino",()=>{
-    var proceso=new Proceso(1,1);
     var paquete=proceso.nuevoPaquete();
     expect(proceso.ubicarPaquete(paquete)).toBe(0);
     expect(paquete.tiempo).toBe(0);
 
     proceso.moverPaquete(paquete);
-    expect(proceso.ubicarPaquete(paquete)).toBe(-1);
-    expect(paquete.tiempo).toBe(1);
-    expect(proceso.destino.recibio(paquete)).toBe(true);
-})
-
-test("Paquete llegue a destino",()=>{
-    var proceso=new Proceso(1,1);
-    var paquete=proceso.nuevoPaquete();
-    expect(proceso.ubicarPaquete(paquete)).toBe(0);
-    expect(paquete.tiempo).toBe(0);
-
+    proceso.moverPaquete(paquete);
+    proceso.moverPaquete(paquete);
     proceso.moverPaquete(paquete);
     expect(proceso.ubicarPaquete(paquete)).toBe(-1);
-    expect(paquete.tiempo).toBe(1);
+    expect(paquete.tiempo).toBe(4);
     expect(proceso.destino.recibio(paquete)).toBe(true);
 })
 
 test("Validar proceso",()=>{
     expect(()=>{var proceso=new Proceso(4,2);}).toThrow("Cantidad de columnas debe ser >= a filas")
 })
+
 
