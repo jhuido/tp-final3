@@ -5,7 +5,7 @@ function Proceso(filas,columnas){
     if(filas<columnas){
         throw new Error("Cantidad de columnas debe ser >= a filas");
     }
-    this.cantInstancias=cantInstancias;
+    this.cantInstancias=columnas;
     this.local=new Local("Local");
     this.destino=new Destino("Destino");
     this.instancias=[];
