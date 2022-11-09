@@ -59,7 +59,7 @@ test("Paquete llegue a destino",()=>{
 })
 
 test("Validar proceso",()=>{
-    expect(()=>{var proceso=new Proceso(4,2);}).toThrow("Cantidad de columnas debe ser >= a filas")
+    expect(()=>{var proceso=new Proceso(4,['Cola de salida']);}).toThrow("Cantidad de columnas debe ser >= a filas")
 })
 
 test("Local tenga nombre abecedario",()=>{
