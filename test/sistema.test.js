@@ -1,5 +1,5 @@
 const Proceso=require("../src/Proceso.js");
-const Paquete=require("../src/Paquete.js")
+const Paquete=require("../src/Paquete.js");
 
 test("Crear proceso",()=>{
     var proceso=new Proceso(4);
