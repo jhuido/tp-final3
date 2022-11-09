@@ -76,5 +76,9 @@ test("Crear intancias",()=>{
     expect(proceso.instancias[0].nombre).toBe('Cola de Salida');
 })
 
+test("Validar que haya una cola de salida",()=>{
+    expect(()=>{var proceso=new Proceso(4,['Cola de salida']);}).toThrow("Solo haya una cola de salida")
+})
+
 
 
