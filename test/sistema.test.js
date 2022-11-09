@@ -72,5 +72,9 @@ test("Destino tenga numeracion",()=>{
     expect(proceso.destinos[1].nombre).toBe(2);
 })
 
+test("Crear intancias",()=>{
+    expect(proceso.instancias[0].nombre).toBe('Cola de Salida');
+})
+
 
 
