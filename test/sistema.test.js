@@ -56,3 +56,8 @@ test("Paquete llegue a destino",()=>{
     expect(proceso.destino.recibio(paquete)).toBe(true);
 })
 
+test("Agregar locales",()=>{
+    var proceso=new Proceso(4,2); //hay 2 locales
+    expect(proceso.locales[0].nombre).toBe('A');
+})
+
