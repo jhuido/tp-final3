@@ -12,7 +12,7 @@ test("Crear proceso",()=>{
 })
 
 test("Obtener nombre del Local",()=>{
-    expect(proceso.local.nombre).toBe("Local");
+    expect(proceso.locales[0].nombre).toBe("A");
 })
 
 test("Obtener nombre del Destino",()=>{
@@ -63,8 +63,8 @@ test("Validar proceso",()=>{
 })
 
 test("Local tenga nombre abecedario",()=>{
-    expect(paquete.locales[0].nombre).toBe('A');
-    expect(paquete.locales[1].nombre).toBe('B');
+    expect(paquete.locales[0].nombre).toBe("A");
+    expect(paquete.locales[1].nombre).toBe("B");
 })
 
 

@@ -8,13 +8,10 @@ function Proceso(filas,columnas){
     this.cantInstancias=columnas;
     this.locales=asignarLocales(filas);
     this.destino=new Destino("Destino");
-    this.instancias=[];
-
-
-    
+    this.instancias=[];    
 
     this.nuevoPaquete=function(){
-        var paquete=this.local.generarPaquete(this.destino);
+        var paquete=this.locales[0].generarPaquete(this.destino);
         this.instancias[0]=paquete;
         return paquete;
     }
@@ -49,12 +46,15 @@ function Proceso(filas,columnas){
         var locales=[];
         var letra='A';
         for(i=0;i<num;i++){
-            locales.push(letra);
-            letra=toString(parseInt(letra)+1);
+            locales.push(new Local(letra));
+            letra=String.fromCharCode(letra.charCodeAt()+1);
         }
         return locales;
     }
 
 }
+//char code at() --> numero ascii
+// front char Code to String (codifo))
+
 
 module.exports=Proceso;
