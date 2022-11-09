@@ -7,11 +7,11 @@ function Proceso(filas,columnas){
     }
     this.cantInstancias=columnas;
     this.locales=asignarLocales(filas);
-    this.destino=new Destino("Destino");
+    this.destinos=asignarDestinos(filas);
     this.instancias=[];    
 
     this.nuevoPaquete=function(){
-        var paquete=this.locales[0].generarPaquete(this.destino);
+        var paquete=this.locales[0].generarPaquete(this.destinos[0]);
         this.instancias[0]=paquete;
         return paquete;
     }
@@ -37,7 +37,7 @@ function Proceso(filas,columnas){
         if(ubic<this.cantInstancias-1){
             this.instancias[ubic+1]=paquete;
         }else{
-            this.destino.recibePaquete(paquete);
+            this.destinos[0].recibePaquete(paquete);
         }
         this.instancias[ubic]=null;
     }
@@ -52,9 +52,15 @@ function Proceso(filas,columnas){
         return locales;
     }
 
+    function asignarDestinos(num){
+        var destinos=[];
+        for(i=1;i<=num;i++){
+            destinos.push(new Destino(i));
+        }
+        return destinos;
+    }
+
 }
-//char code at() --> numero ascii
-// front char Code to String (codifo))
 
 
 module.exports=Proceso;
