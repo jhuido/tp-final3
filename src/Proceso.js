@@ -2,7 +2,7 @@ const Local = require("./Local");
 const Destino = require("./Destino");
 
 function Proceso(filas,columnas){
-    if(filas>columnas){
+    if(filas<columnas){
         throw new Error("Cantidad de columnas debe ser >= a filas");
     }
     this.cantInstancias=cantInstancias;
