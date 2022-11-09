@@ -1,11 +1,11 @@
 const Local = require("./Local");
 const Destino = require("./Destino");
 
-function Proceso(filas,columnas){
-    if(filas>columnas){
+function Proceso(filas,instancias){
+    if(filas>instancias.length){
         throw new Error("Cantidad de columnas debe ser >= a filas");
     }
-    this.cantInstancias=columnas;
+    this.cantInstancias=instancias.length;
     this.locales=asignarLocales(filas);
     this.destinos=asignarDestinos(filas);
     this.instancias=[];    

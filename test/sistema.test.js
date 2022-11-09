@@ -3,7 +3,7 @@ const Paquete=require("../src/Paquete.js");
 
 var proceso;
 beforeEach(()=>{
-    proceso=new Proceso(2,4);
+    proceso=new Proceso(2,['Cola de Salida','Centro de facturación','Centro de calidad','Centro de distribución']);
 })
 
 
@@ -72,8 +72,5 @@ test("Destino tenga numeracion",()=>{
     expect(proceso.destinos[1].nombre).toBe(2);
 })
 
-test("Primera instancia tenga nombre 'Cola de Salida'",()=>{
-    expect(proceso.instancias[0].nombre).toBe('Cola de Salida');
-})
 
 
