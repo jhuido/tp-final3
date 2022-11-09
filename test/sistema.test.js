@@ -68,3 +68,7 @@ test("Paquete llegue a destino",()=>{
     expect(proceso.destino.recibio(paquete)).toBe(true);
 })
 
+test("Validar proceso",()=>{
+    expect(()=>{var proceso=new Proceso(4,2);}).toThrow("Cantidad de columnas debe ser >= a filas")
+})
+
