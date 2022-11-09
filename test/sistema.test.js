@@ -72,4 +72,8 @@ test("Destino tenga numeracion",()=>{
     expect(proceso.destinos[1].nombre).toBe(2);
 })
 
+test("Primera instancia tenga nombre 'Cola de Salida'",()=>{
+    expect(proceso.instancias[0].nombre).toBe('Cola de Salida');
+})
+
 
