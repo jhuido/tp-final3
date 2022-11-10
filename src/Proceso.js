@@ -3,6 +3,7 @@ const Destino = require("./Destino");
 const Instancia = require("./Instancia");
 
 function Proceso(filas,instancias){
+
     validarParametros(filas,instancias);
 
     this.cantInstancias=instancias.length;
@@ -70,12 +71,14 @@ function Proceso(filas,instancias){
             throw new Error("Cantidad de columnas debe ser >= a filas");
         }
 
-        var rdo=true;
-        var obligatorios={'Facturacion':0,'Calidad':0,'Distribucion':0};
-        for(i=0;i<obligatorios.length;i++){
-            
+        var rdo=0;
+        var obligatorios=['Facturacion','Calidad','Distribucion'];
+        for(i=0;i<=obligatorios.length;i++){
+            if(instancias.includes(obligatorios[i])){
+                rdo++;
+            }
         }
-        if(!rdo){
+        if(rdo<2){
             throw new Error("Debe haber por lo menos una Factuacion, Distribucion y Calidad");
         }        
 

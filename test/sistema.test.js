@@ -3,7 +3,7 @@ const Paquete=require("../src/Paquete.js");
 
 var proceso;
 beforeEach(()=>{
-    proceso=new Proceso(2,['Cola de Salida','Facturación','Calidad','Distribución']);
+    proceso=new Proceso(2,['Cola de Salida','Facturacion','Calidad','Distribucion']);
 })
 
 
