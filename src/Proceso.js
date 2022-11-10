@@ -13,7 +13,7 @@ function Proceso(filas,instancias){
     this.mapa=[];   
 
     this.nuevoPaquete=function(local,destinos){
-        var paquetes=loc.generarPaquete(destinos);
+        var paquetes=local.generarPaquete(destinos);
         var loc=this.locales.findIndex(element=>element.nombre==local.nombre);
         this.mapa[loc][0]=paquetes;
         return paquetes;
