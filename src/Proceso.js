@@ -61,13 +61,8 @@ function Proceso(filas,instancias){
     }
 
     function validarParametros(filas,instancias){
-        var rdo=0;
-        for(i=0;i<instancias.length;i++){
-            if(instancias[i]=='Cola de salida'){
-                rdo++;
-            }
-        }
-        if(rdo>1){
+        var rdo=instancias.filter(element=>element=='Cola de salida');
+        if(rdo.length>1){
             throw new Error("Solo haya una cola de salida");
         }
 
