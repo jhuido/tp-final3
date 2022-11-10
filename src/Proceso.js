@@ -78,7 +78,7 @@ function Proceso(filas,instancias){
                 rdo++;
             }
         }
-        if(rdo<2){
+        if(rdo<3){
             throw new Error("Debe haber por lo menos una Factuacion, Distribucion y Calidad");
         }        
 
