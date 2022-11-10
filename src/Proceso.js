@@ -9,12 +9,14 @@ function Proceso(filas,instancias){
     this.cantInstancias=instancias.length;
     this.locales=asignarLocales(filas);
     this.destinos=asignarDestinos(filas);
-    this.instancias=crearInstancias(instancias);    
+    this.instancias=crearInstancias(instancias);
+    this.mapa=[];   
 
-    this.nuevoPaquete=function(){
-        var paquete=this.locales[0].generarPaquete(this.destinos[0]);
-        this.instancias[0]=paquete;
-        return paquete;
+    this.nuevoPaquete=function(local,destinos){
+        var paquetes=loc.generarPaquete(destinos);
+        var loc=this.locales.findIndex(element=>element.nombre==local.nombre);
+        this.mapa[loc][0]=paquetes;
+        return paquetes;
     }
 
     this.ubicarPaquete=function(paquete){
