@@ -71,11 +71,9 @@ function Proceso(filas,instancias){
         }
 
         var rdo=true;
-        var obligatorios=['Facturacion','Calidad','Distribucion'];
+        var obligatorios={'Facturacion':0,'Calidad':0,'Distribucion':0};
         for(i=0;i<obligatorios.length;i++){
-            if(-1==instancias.find((element) => element == obligatorios[i])){
-                rdo=false;
-            }
+            
         }
         if(!rdo){
             throw new Error("Debe haber por lo menos una Factuacion, Distribucion y Calidad");
