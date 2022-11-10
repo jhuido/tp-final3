@@ -69,6 +69,8 @@ function Proceso(filas,instancias){
         if(filas>instancias.length){
             throw new Error("Cantidad de columnas debe ser >= a filas");
         }
+
+
     }
 
 

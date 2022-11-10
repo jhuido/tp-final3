@@ -3,7 +3,7 @@ const Paquete=require("../src/Paquete.js");
 
 var proceso;
 beforeEach(()=>{
-    proceso=new Proceso(2,['Cola de Salida','Centro de facturación','Centro de calidad','Centro de distribución']);
+    proceso=new Proceso(2,['Cola de Salida','Facturación','Calidad','Distribución']);
 })
 
 
@@ -79,6 +79,11 @@ test("Crear intancias",()=>{
 test("Validar que haya una cola de salida",()=>{
     expect(()=>{var proceso=new Proceso(2,['Cola de salida','Cola de salida','Cola de salida']);}).toThrow("Solo haya una cola de salida")
 })
+
+test("Validar que haya al menos una distribucion,facturacion y calidad",()=>{
+    expect(()=>{var proceso=new Proceso(2,['Cola de salida','Facturacion','Otra instancia']);}).toThrow("Debe haber por lo menos una Factuacion, Distribucion y Calidad")
+})
+
 
 
 
