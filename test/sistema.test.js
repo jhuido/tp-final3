@@ -77,7 +77,7 @@ test("Crear intancias",()=>{
 })
 
 test("Validar que haya una cola de salida",()=>{
-    expect(()=>{var proceso=new Proceso(['Cola de salida','Cola de salida','Cola de salida'],2);}).toThrow("Solo haya una cola de salida")
+    expect(()=>{var proceso=new Proceso(2,['Cola de salida','Cola de salida','Cola de salida']);}).toThrow("Solo haya una cola de salida")
 })
 
 
