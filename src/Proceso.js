@@ -3,21 +3,8 @@ const Destino = require("./Destino");
 const Instancia = require("./Instancia");
 
 function Proceso(filas,instancias){
+    validarParametros(filas,instancias);
 
-    var rdo=0;
-    for(i=0;i<instancias.length;i++){
-        if(instancias[i]=='Cola de salida'){
-            rdo++;
-        }
-    }
-    if(rdo>1){
-        throw new Error("Solo haya una cola de salida");
-    }
-
-
-    if(filas>instancias.length){
-        throw new Error("Cantidad de columnas debe ser >= a filas");
-    }
     this.cantInstancias=instancias.length;
     this.locales=asignarLocales(filas);
     this.destinos=asignarDestinos(filas);
@@ -71,6 +58,22 @@ function Proceso(filas,instancias){
         var columnas=[];
         instancias.forEach(nombre=>columnas.push(new Instancia(nombre)));
         return columnas;
+    }
+
+    function validarParametros(filas,instancias){
+        var rdo=0;
+        for(i=0;i<instancias.length;i++){
+            if(instancias[i]=='Cola de salida'){
+                rdo++;
+            }
+        }
+        if(rdo>1){
+            throw new Error("Solo haya una cola de salida");
+        }
+
+        if(filas>instancias.length){
+            throw new Error("Cantidad de columnas debe ser >= a filas");
+        }
     }
 
 
