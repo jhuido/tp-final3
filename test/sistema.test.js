@@ -82,6 +82,7 @@ test("Validar que haya una cola de salida",()=>{
 
 test("Validar que haya al menos una distribucion,facturacion y calidad",()=>{
     expect(()=>{var proceso=new Proceso(2,['Cola de salida','Facturacion','Otra instancia']);}).toThrow("Debe haber por lo menos una Factuacion, Distribucion y Calidad")
+    expect(()=>{var proceso=new Proceso(2,['Cola de salida','Facturacion','Facturacion','Facturacion']);}).toThrow("Debe haber por lo menos una Factuacion, Distribucion y Calidad")
 })
 
 
