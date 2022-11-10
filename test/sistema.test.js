@@ -85,6 +85,10 @@ test("Validar que haya al menos una distribucion,facturacion y calidad",()=>{
     expect(()=>{var proceso=new Proceso(2,['Cola de salida','Facturacion','Facturacion','Facturacion']);}).toThrow("Debe haber por lo menos una Factuacion, Distribucion y Calidad")
 })
 
+test("Validar que Local genere hasta 5 paquete por unidad de tiempo",()=>{
+    expect(proceso.locales[0].generarPaquete([proceso.destinos[0],proceso.destinos[0],proceso.destinos[0],proceso.destinos[1],proceso.destinos[1],proceso.destinos[1]])).toThrow("Cada local puede producir un máximo de 5 paquete por unidad de tiempo")
+})
+
 
 
 
