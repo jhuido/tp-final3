@@ -70,8 +70,21 @@ function Proceso(filas,instancias){
             throw new Error("Cantidad de columnas debe ser >= a filas");
         }
 
+        var rdo=true;
+        var obligatorios=['Facturacion','Calidad','Distribucion'];
+        for(i=0;i<obligatorios.length;i++){
+            if(-1==instancias.find((element) => element == obligatorios[i])){
+                rdo=false;
+            }
+        }
+        if(!rdo){
+            throw new Error("Debe haber por lo menos una Factuacion, Distribucion y Calidad");
+        }        
+
 
     }
+
+    
 
 
 }
