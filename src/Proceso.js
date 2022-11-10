@@ -4,8 +4,13 @@ const Instancia = require("./Instancia");
 
 function Proceso(filas,instancias){
 
-    var rdo=instancias.filter(element=>element=='Cola de Salida');
-    if(rdo.length>1){
+    var rdo=0;
+    for(i=0;i<instancias.length;i++){
+        if(instancias[i]=='Cola de salida'){
+            rdo++;
+        }
+    }
+    if(rdo>1){
         throw new Error("Solo haya una cola de salida");
     }
 
