@@ -1,6 +1,7 @@
 const Local = require("./Local");
 const Destino = require("./Destino");
 const Instancia = require("./Instancia");
+const { array } = require("yargs");
 
 function Proceso(filas,instancias){
 
@@ -14,8 +15,9 @@ function Proceso(filas,instancias){
 
     this.nuevoPaquete=function(local,destinos){
         var paquetes=local.generarPaquete(destinos);
-        var loc=this.locales.findIndex(element=>element.nombre==local.nombre);
-        this.mapa[loc][0]=paquetes;
+        var loc=this.locales.findIndex(element=>element==local.nombre);
+        this.mapa[loc]=new Array();
+        this.mapa[loc].push(paquetes);
         return paquetes;
     }
 
