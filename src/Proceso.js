@@ -28,7 +28,8 @@ function Proceso(filas,instancias){
         for(i=0;i<this.filas;i++){
             for(j=0;j<this.cantInstancias;j++){
                 if(this.mapa[i][j]==paquete){
-                    return "["+i+","+j+"]";
+                    return [i,j];
+                    //return "["+i+","+j+"]";
                 }
             }
         }
