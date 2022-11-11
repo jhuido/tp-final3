@@ -31,7 +31,7 @@ test("Proceso ubique paquete",()=>{
 
     var paquete2=new Paquete(proceso.destinos[0]); // este paquete no se encuentra en el proceso
 
-    expect(proceso.ubicarPaquete(paquete)).toStrictEqual([0,0]);
+    expect(proceso.ubicarPaquete(paquete)).toBe([0,0]);
     expect(proceso.ubicarPaquete(paquete2)).toBe([-1,-1]);
 })
 
