@@ -28,15 +28,11 @@ function Proceso(filas,instancias){
         for(i=0;i<this.filas;i++){
             for(j=0;j<this.cantInstancias;j++){
                 if(this.mapa[i][j]==paquete){
-                    ubicacion[0]=i;
-                    ubicacion[1]=j;
-                    return ubicacion;
+                    return "["+i+","+j+"]";
                 }
             }
         }
-        ubicacion[0]=-1;
-        ubicacion[1]=-1;
-        return ubicacion;
+        return "[-1,-1]";
     }
 
     this.moverPaquete=function(paquete){
