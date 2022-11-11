@@ -26,7 +26,7 @@ test("Local genere paquete",()=>{
 })
 
 test("Proceso ubique paquete",()=>{
-    var paquete=proceso.nuevoPaquete();
+    var paquete=proceso.nuevoPaquete(proceso.locales[0],[proceso.destinos[0]]);
 
     var paquete2=new Paquete(proceso.destinos[0]); // este paquete no se encuentra en el proceso
 
