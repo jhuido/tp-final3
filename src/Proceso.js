@@ -27,12 +27,7 @@ function Proceso(filas,instancias){
         var ubicacion=[];
         for(i=0;i<this.filas;i++){
             for(j=0;j<this.cantInstancias;j++){
-                for(k=0;k<5;i++){
-                    if(this.mapa[i][j][k]==paquete){
-                        return "["+i+","+j+"]";
-                    
-                    }
-                }
+                console.log("\n ["+i+","+j+"]= "+this.mapa[i][j]);
                 
             }
         }
