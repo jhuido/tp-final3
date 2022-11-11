@@ -27,7 +27,7 @@ function Proceso(filas,instancias){
         var ubicacion=[];
         for(i=0;i<this.filas;i++){
             for(j=0;j<this.cantInstancias;j++){
-                if(this.mapa[i][j].includes(paquete)){
+                if(this.mapa[i][j]=paquete){
                     return "["+i+","+j+"]";
                 }
             }
