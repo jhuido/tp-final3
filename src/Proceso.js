@@ -16,7 +16,7 @@ function Proceso(filas,instancias){
 
     this.nuevoPaquete=function(local,destinos){
         var paquetes=local.generarPaquete(destinos);
-        var loc=this.locales.findIndex(element=>element==local.nombre);
+        var loc=this.locales.findIndex(element=>element===local);
         this.mapa[loc]=new Array();
         console.log("\n <<<<< indice "+loc+">>>>>>>>\n");
         this.mapa[loc][0]=paquetes;
