@@ -33,7 +33,7 @@ test("Proceso ubique paquete",()=>{
 
     var rta=[0,0];
     expect(proceso.mapa[0][0]).toBe(paquetes);
-    expect(proceso.ubicarPaquete(paquetes)).toBe(rta);
+    expect(proceso.ubicarPaquete(paquetes)).toBe([0,0]);
 })
 
 test("Paquete se mueve",()=>{
