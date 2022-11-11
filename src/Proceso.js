@@ -7,6 +7,7 @@ function Proceso(filas,instancias){
 
     validarParametros(filas,instancias);
 
+    this.filas=filas;
     this.cantInstancias=instancias.length;
     this.locales=asignarLocales(filas);
     this.destinos=asignarDestinos(filas);
@@ -22,9 +23,11 @@ function Proceso(filas,instancias){
     }
 
     this.ubicarPaquete=function(paquete){
-        var ubicacion=this.instancias.indexOf(paquete);
-        if(ubicacion>this.cantInstancias){
-            return -1;
+        var ubicacion;
+        for(i=0;i<filas;i++){
+            if(ubicacion==-1){
+                ubicacion=this.mapa[i].findIndex(element=>element===paquete);
+            }
         }
         return ubicacion;
     }
