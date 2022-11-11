@@ -18,18 +18,21 @@ function Proceso(filas,instancias){
         var paquetes=local.generarPaquete(destinos);
         var loc=this.locales.findIndex(element=>element==local.nombre);
         this.mapa[loc]=new Array();
-        this.mapa[loc].push(paquetes);
+        this.mapa[loc][0]=paquetes;
         return paquetes;
     }
 
     this.ubicarPaquete=function(paquete){
-        var ubicacion;
+        var ubicacion=[]; // in(0)=fila in(1)=columna
         for(i=0;i<filas;i++){
-            if(ubicacion==-1){
-                ubicacion=this.mapa[i].findIndex(element=>element===paquete);
+            for(j=0;j<this.cantInstancias;j++){
+                if(this.mapa[i][j].nombre==paquete.nombre){
+                    ubicacion.push(i,j);
+                    return ubicacion;
+                }
             }
         }
-        return ubicacion;
+        return [-1,-1];
     }
 
     this.moverPaquete=function(paquete){
