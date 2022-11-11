@@ -31,9 +31,8 @@ test("Proceso ubique paquete",()=>{
 
     var paquete2=new Paquete(proceso.destinos[0]); // este paquete no se encuentra en el proceso
 
-    var rta=[0,0];
     expect(proceso.mapa[0][0]).toBe(paquetes);
-    expect(proceso.ubicarPaquete(paquetes)).toBe([0,0]);
+    expect(proceso.ubicarPaquete(paquetes)).toBe("[0,0]");
 })
 
 test("Paquete se mueve",()=>{
