@@ -22,7 +22,7 @@ test("Obtener nombre del Destino",()=>{
 test("Local genere paquete",()=>{
     var paquetes=proceso.nuevoPaquete(proceso.locales[0],[proceso.destinos[0],proceso.destinos[1]]);
     expect(proceso.mapa[0][0]).toBe(paquetes);
-    expect(proceso.mapa[0][0][0]).toBe(paquetes[0]);
+    expect(proceso.mapa[0][0][0].destino).toBe(proceso.destinos[0]);
     expect(proceso.mapa[0][0][1]).toBe(paquetes[1]);
     expect(paquetes[0].destino.nombre).toBe(1);
     expect(paquetes[0].tiempo).toBe(0);
