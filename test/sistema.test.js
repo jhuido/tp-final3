@@ -29,11 +29,11 @@ test("Local genere paquete",()=>{
 })
 
 test("Proceso ubique paquete",()=>{
-    var paquetes=proceso.nuevoPaquete(proceso.locales[0],[proceso.destinos[0]]);
+    var paquetes=proceso.nuevoPaquete(proceso.locales[0],[proceso.destinos[0],proceso.destinos[0]]);
 
     var paquete2=new Paquete(proceso.destinos[0]); // este paquete no se encuentra en el proceso
 
-    expect(proceso.mapa[0][0]).toBe(paquetes);
+    expect(proceso.mapa[0][0][0]).toBe(paquetes[0]);
     expect(proceso.ubicarPaquete(paquetes)).toBe("[0,0]");
     expect(proceso.ubicarPaquete(paquete2)).toBe("[-1,-1]");
 })
