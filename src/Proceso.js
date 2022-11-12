@@ -18,7 +18,7 @@ function Proceso(filas,instancias){
         var paquetes=local.generarPaquete(destinos);
         var loc=this.locales.findIndex(element=>element===local);
         this.mapa[loc]=new Array();
-        this.mapa[loc][0].push(paquetes);
+        this.mapa[loc][0]=paquetes;
         return paquetes;
     }
 
