@@ -24,7 +24,7 @@ function Proceso(filas,instancias){
 
     this.ubicarPaquete=function(paquete){// in(0)=fila in(1)=columna
         var ubicacion=[];
-        return this.mapa.includes(paquete);
+        return this.mapa[0].includes(paquete);
         for(i=0;i<this.filas;i++){
             for(j=0;j<this.cantInstancias;j++){
                 if(this.mapa[i].includes(paquete)){
