@@ -18,7 +18,7 @@ function Proceso(filas,instancias){
         var paquetes=local.generarPaquete(destinos);
         var loc=this.locales.findIndex(element=>element===local);
         this.mapa[loc]=new Array();
-        this.mapa[loc][0]=paquetes;
+        this.mapa[loc][0].push(paquetes);
         return paquetes;
     }
 
@@ -27,7 +27,7 @@ function Proceso(filas,instancias){
         var ubicacion=[];
         for(i=0;i<this.filas;i++){
             for(j=0;j<this.cantInstancias;j++){
-                console.log("lista --> "+this.mapa[i][j]+Object.getPrototypeOf(this.mapa[i][j]));
+                console.log("lista --> "+this.mapa[i][j]+Object.get);
                 if(this.mapa[i][j].includes(paquete)){
                     return "["+i+","+j+"]";
                 }
