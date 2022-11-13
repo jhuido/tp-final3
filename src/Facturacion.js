@@ -7,7 +7,7 @@ function Facturacion (local,colaEspera){
     }
 
 }
-Facturacion.prototype=Object.create(Intancia.prototype);
+Facturacion.prototype=Object.create(Instancia.prototype);
 Facturacion.prototype.constructor = Facturacion;
 
 
