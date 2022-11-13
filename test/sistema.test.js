@@ -1,4 +1,4 @@
-/*const Proceso=require("../src/Proceso.js");
+const Proceso=require("../src/Proceso.js");
 const Paquete=require("../src/Paquete.js");
 
 var proceso;
@@ -10,7 +10,7 @@ beforeEach(()=>{
 test("Crear proceso",()=>{
     expect(proceso.cantInstancias).toBe(4);
 })
-
+/*
 test("Obtener nombre del Local",()=>{
     expect(proceso.locales[0].nombre).toBe("A");
 })
