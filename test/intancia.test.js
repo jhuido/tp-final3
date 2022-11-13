@@ -4,9 +4,6 @@ const Facturacion = require("../src/Facturacion");
 const Calidad = require("../src/Calidad");
 const Distribucion = require("../src/Distribucion");
 
-
-test("Crear intancias",()=>{
-
     /*
     1) Proceso se crea sin locales, solo con las instancias
         --> const proceso
@@ -22,7 +19,7 @@ test("Crear intancias",()=>{
                     crea Distribucion(local,distribucion)
 
     */
-})
+
 
 test("instancias",()=>{
     const local= new Local("A")
