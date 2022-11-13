@@ -38,13 +38,11 @@ test("Proceso ubique paquete",()=>{
     expect(proceso.ubicarPaquete(paquetes[0])).toBe("[0,0]");
     expect(proceso.ubicarPaquete(paquetes[1])).toBe("[0,0]");
     expect(proceso.ubicarPaquete(paquete2)).toBe("[-1,-1]");
-    /*expect(proceso.ubicarPaquete(paquetes[0])).toBe(true);
-    expect(proceso.ubicarPaquete(paquete2)).toBe("[-1,-1]");*/
 })
 
 test("Paquete se mueve",()=>{
     var paquetes=proceso.nuevoPaquete(proceso.locales[0],[proceso.destinos[0],proceso.destinos[0]]);
-    expect(paquete.tiempo).toBe(0);
+    expect(paquetes[0].tiempo).toBe(0);
 
     proceso.moverPaquete(paquetes[0]);
     expect(proceso.ubicarPaquete(paquete)).toBe(1);
