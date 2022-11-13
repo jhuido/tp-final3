@@ -10,5 +10,7 @@ function Facturacion (local,colaEspera){
         throw new Error("En los centros de facturación la cola de espera puede ir entre 10 y 30")
     }
 }
+
 Facturacion.prototype=Object.create(Intancia.prototype);
+Facturacion.prototype.constructor = Facturacion;
 module.exports=Facturacion;
