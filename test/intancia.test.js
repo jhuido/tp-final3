@@ -26,7 +26,7 @@ test("instancias",()=>{
     const facturacion= new Facturacion(local,20);
     const calidad= new Calidad(local,4);
     const distribucion=new Distribucion(local,9);
-    expect(facturacion.colaEspera).toBe(2);
+    expect(facturacion.colaEspera).toBe(20);
     expect(calidad.colaEspera).toBe(4);
     expect(distribucion.colaEspera).toBe(9);
     
