@@ -37,6 +37,7 @@ test("Proceso ubique paquete",()=>{
     expect(proceso.mapa[0][0][1]).toBe(paquetes[1]);
     expect(proceso.ubicarPaquete(paquetes[0])).toBe("[0,0]");
     expect(proceso.ubicarPaquete(paquetes[1])).toBe("[0,0]");
+    expect(proceso.ubicarPaquete(paquetes[1])).toBe("[-1,-1]");
     /*expect(proceso.ubicarPaquete(paquetes[0])).toBe(true);
     expect(proceso.ubicarPaquete(paquete2)).toBe("[-1,-1]");*/
 })
