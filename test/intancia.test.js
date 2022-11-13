@@ -30,7 +30,7 @@ test("instancias",()=>{
     const calidad= new Calidad(local,3);
     const distribucion=new Distribucion(local,9);
     expect(facturacion.colaEspera).toBe(2);
-    expect(calidad.colaEspera).toBe(10);
+    expect(calidad.colaEspera).toBe(3);
     expect(distribucion.colaEspera).toBe(9);
     
 
