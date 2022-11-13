@@ -27,10 +27,14 @@ function Proceso(filas,instancias){
             for(j=0;j<this.cantInstancias;j++){
                 if(this.mapa[i][j].includes(paquete)){
                     return "["+i+","+j+"]";
+                    paquete.ubicacion[i,j];
+                }
+                else{
+                    return "[-1,-1]";
                 }
             }
         }
-        return "[-1,-1]";
+        
         
     }
 
