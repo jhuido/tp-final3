@@ -27,10 +27,10 @@ test("Crear intancias",()=>{
 test("instancias",()=>{
     const local= new Local("A")
     const facturacion= new Facturacion(local,2);
-    const calidad= new Calidad(local,3);
+    const calidad= new Calidad(local,4);
     const distribucion=new Distribucion(local,9);
-    expect(facturacion.colaEspera).toBe(2);
-    expect(calidad.colaEspera).toBe(3);
+    expect(facturacion.colaEspera).toBe(3);
+    expect(calidad.colaEspera).toBe(4);
     expect(distribucion.colaEspera).toBe(9);
     
 
