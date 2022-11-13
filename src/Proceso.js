@@ -23,16 +23,15 @@ function Proceso(filas,instancias){
     }
 
     this.ubicarPaquete=function(paquete){// in(0)=fila in(1)=columna
-        var ubicacion=[];
-        return this.mapa[0][0].includes(paquete);
         for(i=0;i<this.filas;i++){
             for(j=0;j<this.cantInstancias;j++){
-                if(this.mapa[i].includes(paquete)){
+                if(this.mapa[i][j].includes(paquete)){
                     return "["+i+","+j+"]";
                 }
             }
         }
         return "[-1,-1]";
+        
     }
 
     this.moverPaquete=function(paquete){
