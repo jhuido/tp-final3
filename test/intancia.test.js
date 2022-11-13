@@ -22,8 +22,8 @@ const Distribucion = require("../src/Distribucion");
 
 
 test("instancias",()=>{
-    const local= new Local("A")
-    const facturacion= new Facturacion(local,2);
+    const local= new Local("A");
+    const facturacion= new Facturacion(local,20);
     const calidad= new Calidad(local,4);
     const distribucion=new Distribucion(local,9);
     expect(facturacion.colaEspera).toBe(2);
