@@ -6,15 +6,20 @@ const Distribucion = require("../src/Distribucion");
 
 
 test("Crear intancias",()=>{
-    const cantInstancias=4;
-    const proceso=new Proceso(["Facturacion",'Calidad','Distribucion'])
-    proceso.agregarLocal(4,4,11);
 
     /*
     1) Proceso se crea sin locales, solo con las instancias
-    2) Agregar local:
+        --> const proceso
+        proceso.instancias=["Facturacion",'Calidad','Distribucion']
+    2) Agregar local:(4,4,11)==> (facturacion)
             procesa crea nuevo local
+            --> const local=new local('a')
             crea las instancias
+                recorriendo el arreglo de instancias
+                --> for(i=0,i<this.instancias.length;i++)
+                    crea Factuarcion(local,facturacion)
+                    crea Calidad(local,calidad)
+                    crea Distribucion(local,distribucion)
 
     */
 })
