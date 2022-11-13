@@ -29,7 +29,7 @@ test("instancias",()=>{
     const calidad= new Calidad("A",3);
     const distribucion=new Distribucion("A",9);
     expect(facturacion.colaEspera).toBe(2);
-    expect(calidad.colaEspera).toBe(3);
+    expect(calidad.colaEspera).toBe(10);
     expect(distribucion.colaEspera).toBe(9);
     
 
