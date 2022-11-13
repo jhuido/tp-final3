@@ -34,16 +34,15 @@ test("Proceso ubique paquete",()=>{
     var paquete2=new Paquete(proceso.destinos[0]); // este paquete no se encuentra en el proceso
 
     expect(proceso.mapa[0][0][0]).toBe(paquetes[0]);
-    expect(proceso.ubicarPaquete(paquetes[0])).toBe(true);
-    expect(proceso.ubicarPaquete(paquete2)).toBe("[-1,-1]");
+    /*expect(proceso.ubicarPaquete(paquetes[0])).toBe(true);
+    expect(proceso.ubicarPaquete(paquete2)).toBe("[-1,-1]");*/
 })
 
 test("Paquete se mueve",()=>{
-    var paquete=proceso.nuevoPaquete();
-    expect(proceso.ubicarPaquete(paquete)).toBe(0);
+    var paquetes=proceso.nuevoPaquete(proceso.locales[0],[proceso.destinos[0],proceso.destinos[0]]);
     expect(paquete.tiempo).toBe(0);
 
-    proceso.moverPaquete(paquete);
+    proceso.moverPaquete(paquetes[0]);
     expect(proceso.ubicarPaquete(paquete)).toBe(1);
     expect(paquete.tiempo).toBe(1);
 })
