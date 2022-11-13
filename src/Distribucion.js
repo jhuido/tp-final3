@@ -10,7 +10,7 @@ function Distribucion (local,colaEspera){
         throw new Error("En los centros de distribución la cola de espera puede ir entre 10 y 30")
     }
 }
-Distribucion.prototype=Object.create(Intancia.prototype);
+Distribucion.prototype=Object.create(Instancia.prototype);
 
 
 module.exports=Distribucion;

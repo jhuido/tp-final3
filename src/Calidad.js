@@ -12,6 +12,6 @@ function Calidad (local,colaEspera){
     }
     //: Por cada unidad de tiempo puede procesar 1 paquetes
 }
-Calidad.prototype=Object.create(Intancia.prototype);
+Calidad.prototype=Object.create(Instancia.prototype);
 
 module.exports=Calidad;
